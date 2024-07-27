@@ -122,7 +122,7 @@ function UserListPage() {
 
 
     return (
-        <div className='flex flex-col w-full  h-auto'>
+        <div className='flex flex-col w-full h-auto mb-20 overflow-scroll'>
             <div className='flex flex-row'>
                 <div className='w-1/2 flex flex-row justify-start items-center'>
                     <h2 className="text-md sm:text-3xl font-semibold ml-3">

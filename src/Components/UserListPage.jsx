@@ -202,9 +202,12 @@ function UserListPage() {
                     ))}
                 </div>
             </div>
-            <button className='sm:hidden flex' onClick={() => setLoader(true)}>
-                Load More
-            </button>
+            <div className='w-full flex items-center justify-center'>
+                <button className='rounded bg-green-700 p-1 text-white sm:hidden flex' onClick={() => setLoader(true)}>
+                    Load More
+                </button>
+            </div>
+
         </div>
     )
 }

@@ -1,17 +1,16 @@
-import React, { useState } from 'react'
+import React from 'react'
 import loaderIcon from '../assets/loader.svg'
 import { useUserContext } from '../Context/UserContext';
 
 function Loader() {
 
-    let {limit, setLimit, loader, setLoader, userData} = useUserContext();
+    let {limit, loader, setLoader} = useUserContext();
 
     window.addEventListener('scroll', () => {
         const reachedBottom = window.innerHeight + window.scrollY >= document.body.scrollHeight;
 
         if (reachedBottom && limit < 208) {
             setLoader(true);
-            // console.log(loader);
             return 0;
         }
     });

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useUserContext } from "../Context/UserContext";
 
 function useUserList() {
-    let { setLimit, limit, skip, userData, setUserData, loader, setLoader, loaderCount, setLoaderCount } = useUserContext();
+    let { setLimit, limit, skip, userData, setUserData, loader, setLoader, setLoaderCount } = useUserContext();
 
     let fetchData = async () => {
         if (limit === 10) {

@@ -125,13 +125,13 @@ function UserListPage() {
         <div className='flex flex-col w-full  h-auto'>
             <div className='flex flex-row'>
                 <div className='w-1/2 flex flex-row justify-start items-center'>
-                    <h2 className='text-3xl font-semibold ml-3'>
+                    <h2 className="text-md sm:text-3xl font-semibold ml-3">
                         Employees
                     </h2>
                 </div>
-                <div className='w-1/2 flex flex-row justify-end items-center gap-4'>
-                    <img src={filter} className='h-1/4' />
-                    <select className=' p-2 text-center rounded-lg border-gray-400 border'
+                <div className='w-1/2 flex flex-row justify-end items-center gap-1 sm:gap-4'>
+                    <img src={filter} className='h-1/5 sm:h-1/4' />
+                    <select className='text-sm pt-1 pb-1 sm:p-2 text-center rounded-lg border-gray-400 border'
                         onChange={(e) => setCurrentState(e.target.value)}
                     >
                         <option>Country</option>
@@ -141,7 +141,7 @@ function UserListPage() {
                             </option>
                         ))}
                     </select>
-                    <select className=' p-2 text-center rounded-lg border-gray-400 border mr-3' onChange={(e) => setCurrentGender(e.target.value)}
+                    <select className='text-sm p-1 sm:p-2 text-center rounded-lg border-gray-400 border mr-3' onChange={(e) => setCurrentGender(e.target.value)}
                     >
                         <option>Gender</option>
                         <option value="male">Male</option>
@@ -149,51 +149,51 @@ function UserListPage() {
                     </select>
                 </div>
             </div>
-            <div className='border m-3 rounded-lg'>
-                <div className='flex flex-row w-full mt-2 mb-2'>
+            <div className='border m-1 rounded-lg'>
+                <div className='text-sm sm:text-base flex flex-row w-full mt-2 mb-2'>
                     <button onClick={sortById}
                         className='w-16 flex flex-row items-center justify-center'
                     >
-                        ID
+                        Id
                         <img src={sort} className='h-1/4' />
                     </button>
                     <button className='w-24 flex pl-2 items-center'>Image</button>
                     <button onClick={sortByName}
-                        className='w-56 flex items-center'
+                        className='sm:w-56 flex items-center'
                     >
                         FullName
                         <img src={sort} className='h-1/4' />
                     </button>
-                    <button className='w-32 flex items-center' onClick={sortByAge}>
+                    <button className='w-28 sm:w-32 flex items-center' onClick={sortByAge}>
                         Demography
                         <img src={sort} className='h-1/4' />
                     </button>
-                    <button className='w-40 flex items-center'>Designation</button>
-                    <button className='w-36 flex ml-4 items-center'>Location</button>
+                    <button className='hidden sm:flex sm:w-40 items-center'>Designation</button>
+                    <button className='hidden sm:flex sm:w-36 ml-4 items-center'>Location</button>
                 </div>
                 <div>
                     {fullData.map((data, dataIndex) => (
                         <div key={data.id} className='text-black flex flex-row items-center border w-full'>
-                            <div className='w-16 flex justify-center'>
+                            <div className='w-16 flex justify-center text-sm'>
                                 {data.id}
                             </div>
-                            <img src={data.image} className='h-14 pr-10' />
-                            <div className='w-56'>
+                            <img src={data.image} className=' h-11 sm:h-14 pr-10' />
+                            <div className='w-56 text-sm'>
                                 {data.firstName}
                                 {" "}
                                 {data.maidenName}
                                 {" "}
                                 {data.lastName}
                             </div>
-                            <div className='w-32'>
+                            <div className=' w-32 text-sm'>
                                 {data.gender === 'male' ? 'M' : 'F'}
                                 {"/"}
                                 {data.age}
                             </div>
-                            <div className='w-40'>
+                            <div className='hidden sm:visible sm:w-40'>
                                 {data.company.title}
                             </div>
-                            <div className='w-40 ml-4'>
+                            <div className='hidden sm:visible sm:w-40 ml-4'>
                                 {data.address.state}
                                 , USA
                             </div>

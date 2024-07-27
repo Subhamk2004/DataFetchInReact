@@ -202,6 +202,9 @@ function UserListPage() {
                     ))}
                 </div>
             </div>
+            <button className='sm:hidden flex' onClick={() => setLoader(true)}>
+                Load More
+            </button>
         </div>
     )
 }
